@@ -28,14 +28,14 @@ feature "User creates a contact" do
   end
 
   scenario "user submits a contact with a duplicate email" do
-    Contact.create!(first_name: 'Helen',
-      last_name: 'Sipnspills',
-      email: 'hchood@danceparty.com',
+    Contact.create!(first_name: 'Eric',
+      last_name: 'Catmanweirdo',
+      email: 'catperson@ilovemycattoomuch.com',
       phone: '12927651234',
       state: 'MA')
 
     visit '/contacts/new'
-    fill_in "Email", with: 'hchood@danceparty.com'
+    fill_in "Email", with: 'catperson@ilovemycattoomuch.com'
     click_on "Create"
 
     expect(page).to have_content "Email has already been taken"
